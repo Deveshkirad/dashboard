@@ -1,0 +1,110 @@
+/* ===================================================================
+   1. Global Styles & Variables
+=================================================================== */
+:root {
+    --primary-color: #2575fc; /* Aligned with main theme */
+    --primary-hover-color: #1c62e0; /* Aligned with main theme */
+    --gradient-start: #4facfe; /* A lighter, sky blue */
+    --gradient-end: #2575fc; /* The primary theme color */
+    --surface-color: #ffffff;
+    --text-color-dark: #333;
+    --text-color-light: #666;
+    --border-color: #ddd;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+/* ===================================================================
+   2. Layout
+=================================================================== */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+}
+
+/* ===================================================================
+   3. Login Card
+=================================================================== */
+.login-card {
+    background-color: var(--surface-color);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    transition: all 0.3s ease;
+}
+.login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-header h2 {
+    font-weight: 600;
+    color: var(--text-color-dark);
+}
+
+.login-header p {
+    color: var(--text-color-light);
+    font-size: 0.9rem;
+}
+
+/* ===================================================================
+   4. Forms & Buttons
+=================================================================== */
+.form-control {
+    height: 50px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(37, 117, 252, 0.25); /* Aligned with main theme */
+}
+
+.form-check-label, .forgot-password {
+    font-size: 0.85rem;
+}
+.forgot-password {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+.login-btn {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+.login-btn:hover {
+    background-color: var(--primary-hover-color);
+}
+
+.login-btn:focus {
+    box-shadow: 0 0 0 0.25rem rgba(37, 117, 252, 0.5); /* Aligned with main theme */
+}
+
+/* ===================================================================
+   5. Responsive Styles
+=================================================================== */
+@media (max-width: 576px) {
+    .login-card {
+        padding: 1.5rem;
+    }
+}

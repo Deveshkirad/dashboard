@@ -1,0 +1,36 @@
+/* ===================================================================
+   Teachers Page Specific Styles
+   All shared styles are now in layout.css.
+=================================================================== */
+
+.card-title .fa {
+    color: var(--link-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* Toast Notification Styling */
+.toast-container {
+    z-index: 1090;
+}
+
+/* Custom styling for the progression card */
+.progression-card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.progression-card .form-select {
+    max-width: 200px;
+}
+
+/* Styling for the new checkbox list */
+.unit-checkbox-list {
+    max-height: 150px; /* Limit height and make it scrollable */
+    overflow-y: auto;
+    border: 1px solid var(--form-control-border);
+    padding: 10px;
+    border-radius: 8px;
+}

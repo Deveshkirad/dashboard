@@ -1,0 +1,16 @@
+/* ===================================================================
+   Students Page Specific Styles
+   All shared styles are now in layout.css.
+=================================================================== */
+
+/* --- Progress Bar (for attendance) --- */
+/* Override: Taller progress bar for this page */
+.progress {
+    height: 20px;
+    font-size: 0.8rem;
+}
+
+/* Override: Use a solid success color instead of the default gradient */
+.progress-bar.bg-success {
+    background-color: #198754 !important; /* A solid green for good attendance */
+}

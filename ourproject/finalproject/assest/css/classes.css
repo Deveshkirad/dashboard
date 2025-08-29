@@ -1,0 +1,7 @@
+/*
+ * Classes Page Specific Styles
+ */
+
+.toast-container {
+    z-index: 1090; /* Ensure toast is above other elements */
+}

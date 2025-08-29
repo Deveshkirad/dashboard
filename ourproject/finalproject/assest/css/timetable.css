@@ -1,0 +1,98 @@
+/* ===================================================================
+   Timetable Page Specific Styles
+=================================================================== */
+
+/* ===================================================================
+   1. Variables & Base Grid
+=================================================================== */
+:root {
+    /* Using a light version of the primary color for hovers on empty slots */
+    --primary-light-bg: #eef2ff; /* From theme.css dropdown hover */
+}
+
+html.dark-mode {
+    /* In dark mode, the hover can be a subtle overlay */
+    --primary-light-bg: rgba(79, 70, 229, 0.2);
+}
+
+.timetable-container {
+    overflow-x: auto; /* Allows horizontal scrolling on smaller screens */
+    padding-bottom: 10px; /* Space for scrollbar */
+}
+
+.timetable-grid {
+    display: grid;
+    grid-template-columns: 80px repeat(5, 1fr); /* Time column + 5 weekdays */
+    gap: 5px;
+    min-width: 800px; /* Prevent squishing on medium screens before scrolling kicks in */
+}
+
+/* ===================================================================
+   2. Grid Cell Styling
+=================================================================== */
+.timetable-header, .timetable-time, .timetable-slot {
+    padding: 1rem;
+    border: 1px solid var(--card-border-color);
+    border-radius: 0.375rem; /* 6px, consistent with theme */
+    text-align: center;
+    background-color: var(--card-bg); /* Use surface-bg for card-like appearance */
+    min-height: 120px; /* Increased height for more content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    font-size: 0.9rem;
+}
+
+.timetable-header {
+    font-weight: 600;
+    background-color: var(--sidebar-bg); /* As in original */
+    color: var(--sidebar-text-hover); /* Use the brighter text for headers */
+    border-color: var(--sidebar-bg);
+}
+
+.timetable-time {
+    font-weight: 500;
+    color: var(--text-muted-color);
+    background-color: var(--body-bg); /* Make it blend with the background */
+    border-color: var(--card-border-color);
+}
+
+/* ===================================================================
+   3. Slot Variations & Content
+=================================================================== */
+.timetable-slot {
+    cursor: pointer;
+    position: relative; /* For potential future additions like badges */
+}
+
+.timetable-slot:hover {
+    border-color: var(--link-color);
+    background-color: var(--primary-light-bg);
+}
+
+/* Specific style for empty slots */
+.timetable-slot.empty-slot {
+    background-color: var(--body-bg); /* Less prominent than a filled slot */
+    color: var(--text-muted-color);
+    border-style: dashed;
+}
+
+.timetable-slot.empty-slot:hover {
+    background-color: var(--primary-light-bg);
+    border-color: var(--link-color);
+    border-style: solid;
+    color: var(--link-color);
+}
+
+/* Styles for content within a filled slot */
+.slot-subject {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.slot-teacher, .slot-room {
+    color: var(--text-muted-color);
+    font-size: 0.85rem;
+}

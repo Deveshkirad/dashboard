@@ -1,0 +1,247 @@
+/* 1. Define Color Variables for Light & Dark Themes */
+:root {
+    --body-bg: #f8f9fc;
+    --text-color: #5a5c69;
+    --card-bg: #fff;
+    --card-border-color: #e3e6f0;
+    --header-bg: #fff;
+    --header-border-color: #e3e6f0;
+    --table-border-color: #e3e6f0;
+    --table-striped-bg: #f8f9fc;
+    --form-control-bg: #fff;
+    --form-control-border: #d1d3e2;
+    --text-muted-color: #858796;
+    --text-primary-color: #2575fc;
+    --link-color: #2575fc;
+    --bs-success-rgb: 52, 232, 158;
+    --bs-warning-rgb: 255, 193, 7;
+    --bs-danger-rgb: 220, 53, 69;
+    --bs-info-rgb: 23, 162, 184;
+    --text-success-color: #10b981;
+    --text-info-color: #0ea5e9;
+    --text-warning-color: #f59e0b;
+    --text-danger-color: #ef4444;
+}
+
+.dark-mode {
+    --body-bg: #121212;
+    --text-color: #e0e0e0;
+    --card-bg: #1e1e1e;
+    --card-border-color: #333;
+    --header-bg: #1e1e1e;
+    --header-border-color: #333;
+    --table-border-color: #333;
+    --table-striped-bg: #2a2a2a;
+    --form-control-bg: #2a2a2a;
+    --form-control-border: #444;
+    --text-muted-color: #888;
+    --text-primary-color: #5c9dff;
+    --link-color: #5c9dff;
+    --bs-success-rgb: 40, 167, 69;
+    --bs-warning-rgb: 255, 193, 7;
+    --bs-danger-rgb: 220, 53, 69;
+    --bs-info-rgb: 23, 162, 184;
+    --text-success-color: #34e89e;
+    --text-info-color: #38bdf8;
+    --text-warning-color: #facc15;
+    --text-danger-color: #f87171;
+}
+
+/* 2. Apply Variables to Base Elements */
+body {
+    background-color: var(--body-bg);
+    color: var(--text-color);
+}
+
+a {
+    color: var(--link-color);
+}
+a:hover {
+    color: var(--link-color);
+    filter: brightness(1.2);
+}
+
+/* Ensure bold text is also readable */
+b,
+strong {
+    color: inherit;
+}
+
+/* 3. Component Styling */
+
+/* Cards */
+.card {
+    background-color: var(--card-bg);
+    border-color: var(--card-border-color);
+    color: var(--text-color);
+}
+.card-header, .card-footer {
+    background-color: var(--card-bg);
+    border-bottom-color: var(--card-border-color);
+    border-top-color: var(--card-border-color);
+    color: var(--text-color);
+}
+.dark-mode .card-header {
+    /* More specific rule to ensure text color applies in dark mode */
+    color: var(--text-color);
+}
+.card-header h6 {
+    color: var(--text-primary-color) !important;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--header-bg);
+    border-bottom: 1px solid var(--header-border-color);
+}
+.navbar .navbar-brand, .navbar .nav-link {
+    color: var(--text-color);
+}
+.dark-mode .navbar .text-gray-600 {
+    color: #b5b5b5 !important;
+}
+
+/* Dropdowns */
+.dropdown-menu {
+    background-color: var(--card-bg);
+    border-color: var(--card-border-color);
+}
+.dropdown-item {
+    color: var(--text-color);
+}
+.dropdown-item:hover, .dropdown-item:focus {
+    background-color: var(--table-striped-bg);
+    color: var(--text-color);
+}
+.dropdown-divider {
+    border-top-color: var(--card-border-color);
+}
+.dark-mode .dropdown-item .text-gray-400 {
+    color: #888 !important;
+}
+
+/* Modals */
+.modal-content {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--card-border-color);
+}
+.modal-header, .modal-footer {
+    border-bottom-color: var(--card-border-color);
+    border-top-color: var(--card-border-color);
+}
+.btn-close {
+    filter: var(--body-bg) brightness(0.5) invert(1);
+}
+
+/* Tables */
+.table {
+    color: var(--text-color);
+    border-color: var(--table-border-color);
+}
+.table > :not(caption) > * > * {
+    background-color: transparent; /* Let parent control color */
+}
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    background-color: var(--table-striped-bg);
+}
+.table-bordered > :not(caption) > * > * {
+    border-color: var(--table-border-color);
+}
+.table-light {
+    --bs-table-bg: var(--table-striped-bg);
+    --bs-table-border-color: var(--table-border-color);
+}
+
+/* Forms */
+.form-control, .form-select {
+    background-color: var(--form-control-bg);
+    color: var(--text-color);
+    border-color: var(--form-control-border);
+}
+.form-control:focus, .form-select:focus {
+    background-color: var(--form-control-bg);
+    color: var(--text-color);
+    border-color: var(--link-color);
+    box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+}
+.form-control::placeholder {
+    color: var(--text-muted-color);
+}
+
+/* Navs (Tabs) */
+.dark-mode .nav-tabs {
+    border-bottom-color: var(--card-border-color);
+}
+.dark-mode .nav-tabs .nav-link {
+    color: var(--text-muted-color);
+    border-color: transparent;
+    border-bottom-color: transparent;
+}
+.dark-mode .nav-tabs .nav-link:hover, .dark-mode .nav-tabs .nav-link:focus {
+    border-color: transparent;
+    color: var(--link-color);
+}
+.dark-mode .nav-tabs .nav-link.active, .dark-mode .nav-tabs .nav-item.show .nav-link {
+    color: var(--link-color);
+    background-color: var(--card-bg);
+    border-color: var(--card-border-color) var(--card-border-color) var(--card-bg);
+}
+
+/* Buttons */
+.dark-mode .btn-light {
+    background-color: var(--table-striped-bg);
+    border-color: var(--card-border-color);
+    color: var(--text-color);
+}
+.dark-mode .btn-light:hover {
+    background-color: #3c3c3c;
+    border-color: var(--card-border-color);
+    color: var(--text-color);
+}
+
+/* 4. Utility & Contextual Class Overrides */
+.text-muted {
+    color: var(--text-muted-color) !important;
+}
+.text-primary {
+    color: var(--text-primary-color) !important;
+}
+
+/* Contextual table cells from attendance.php */
+.dark-mode .table-success { --bs-table-bg: rgba(var(--bs-success-rgb), 0.25); color: #d4edda; }
+.dark-mode .table-warning { --bs-table-bg: rgba(var(--bs-warning-rgb), 0.25); color: #fff3cd; }
+.dark-mode .table-danger { --bs-table-bg: rgba(var(--bs-danger-rgb), 0.25); color: #f8d7da; }
+
+/* Alert from teachers.php */
+.dark-mode .alert-info { background-color: rgba(var(--bs-info-rgb), 0.2); color: #cff4fc; border-color: rgba(var(--bs-info-rgb), 0.3); }
+
+/* 5. Page-Specific Component Overrides */
+
+/* Stat Cards (Dashboard, Assignments) */
+.dark-mode .stat-card .stat-card-title {
+    color: var(--text-muted-color);
+}
+
+/* Activity Feed (Dashboard) */
+.dark-mode .activity-item {
+    transition: background-color 0.2s ease-in-out;
+    
+}
+.dark-mode .activity-item:hover {
+    background-color: rgba(255, 255, 255, 0.05); /* Subtle hover effect */
+}
+.dark-mode .activity-content {
+    color: var(--text-color); /* Base text color for the content area */
+}
+.dark-mode .activity-content .small.text-muted {
+    color: var(--text-muted-color) !important; /* Ensure the timestamp is muted */
+}
+.dark-mode .activity-content strong {
+    color: #f8f9fa; /* Slightly brighter than default text for emphasis */
+}
+
+/* Modern Badges from layout.css */
+.dark-mode .badge.bg-success { background-color: rgba(var(--bs-success-rgb), 0.2) !important; color: #a7f3d0 !important; }
+.dark-mode .badge.bg-danger { background-color: rgba(var(--bs-danger-rgb), 0.2) !important; color: #fecaca !important; }
+.dark-mode .badge.bg-warning { background-color: rgba(var(--bs-warning-rgb), 0.2) !important; color: #fde68a !important; }

@@ -1,0 +1,40 @@
+/*
+ * Styles for the main attendance table to improve readability and usability.
+ */
+
+/*
+ * 1. Sticky Header
+ * Makes the table header stay at the top when scrolling vertically within its container.
+ * The parent container (.card-body) must have a defined height and overflow.
+ */
+.attendance-table thead th {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    /* The background color is inherited from .table-light, which is good.
+       We just need to ensure it's explicitly set for stacking context. */
+}
+
+/* Ensure the sticky header has a solid background to hide content scrolling underneath */
+.attendance-table thead.table-light th {
+    background-color: #f8f9fa;
+}
+
+/* Dark mode compatibility for sticky header */
+html.dark-mode .attendance-table thead.table-light th {
+    background-color: var(--card-bg);
+}
+
+/*
+ * 2. Column Borders
+ * Adds subtle vertical borders between columns for better separation.
+ */
+.attendance-table th,
+.attendance-table td {
+    border-right: 1px solid var(--bs-border-color-translucent, rgba(0, 0, 0, 0.175));
+}
+.attendance-table th:last-child,
+.attendance-table td:last-child {
+    border-right: none;
+}

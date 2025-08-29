@@ -1,0 +1,51 @@
+/*
+ * Styles specific to the Dashboard page
+ */
+
+/* Chart Container */
+.chart-container {
+    position: relative;
+    height: 320px; /* A fixed height for chart containers */
+    width: 100%;
+}
+
+/* Recent Activity Feed */
+.activity-feed {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.activity-item {
+    position: relative;
+    padding: 0.5rem 0 1.5rem 35px; /* Space for icon and line */
+    border-left: 2px solid #e5e7eb; /* The timeline */
+}
+
+/* Last item should not have a bottom border extending past the icon */
+.activity-item:last-child {
+    border-left-color: transparent;
+    padding-bottom: 0.5rem;
+}
+
+.activity-icon {
+    position: absolute;
+    left: -16px; /* Center the icon on the timeline */
+    top: 0.5rem;
+}
+
+/* This style was missing, it defines the colored circle for the icon */
+.icon-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* Make it a circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+/* Dark mode styles for activity feed */
+html.dark-mode .activity-item {
+    border-left-color: var(--card-border-color);
+}
