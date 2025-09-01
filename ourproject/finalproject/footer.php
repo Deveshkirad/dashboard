@@ -1,5 +1,5 @@
-    </div> <!-- End of .main-content -->
-
+<html>
+    <body>
     <!-- Footer -->
     <footer class="sticky-footer">
         <div class="container my-auto">
